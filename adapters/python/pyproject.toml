@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "two-key-gate"
+version = "0.1.0"
+description = "Python adapters for two-key-agent-gate: put the gate in front of existing agent tools."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Heywood Geblomi" }]
+requires-python = ">=3.9"
+dependencies = []
+
+[project.optional-dependencies]
+langchain = ["langchain-core>=0.3"]
+test = ["pytest>=7"]
+
+[project.urls]
+Homepage = "https://github.com/HeywoodGeblomi/two-key-agent-gate"
+
+[project.scripts]
+two-key-gate-mcp-proxy = "two_key_gate.mcp_proxy:main"
+
+[tool.setuptools]
+packages = ["two_key_gate"]
