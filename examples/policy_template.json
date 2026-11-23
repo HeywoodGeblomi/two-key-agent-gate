@@ -1,0 +1,27 @@
+{
+  "version": "my-agent-policy-1",
+  "notes": "Template. List every tool your agent can call. Tools not listed are refused. privileged = the call changes something or sends data out. controlling_args = the arguments that pick the target (who, where, which file). Those must trace back to the user's own words. id_args = controlling args that hold IDs your own tools generate. content_args = free text scanned for URLs, emails and IBANs. destructive = cannot be undone.",
+  "tools": {
+    "read_inbox": { "privileged": false },
+    "search_files": { "privileged": false },
+    "send_email": {
+      "privileged": true,
+      "controlling_args": ["to"],
+      "content_args": ["subject", "body"],
+      "args": ["to", "subject", "body"]
+    },
+    "create_event": {
+      "privileged": true,
+      "controlling_args": ["participants"],
+      "content_args": ["title"],
+      "args": ["participants", "title", "start"]
+    },
+    "delete_file": {
+      "privileged": true,
+      "destructive": true,
+      "controlling_args": ["file_id"],
+      "id_args": { "file_id": { "kind": "file_id", "cue_required": true } },
+      "args": ["file_id"]
+    }
+  }
+}
