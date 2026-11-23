@@ -1,0 +1,20 @@
+{
+  "version": "adapter-examples-1",
+  "notes": "Policy for the adapter examples: a small email agent.",
+  "tools": {
+    "read_inbox": { "privileged": false },
+    "send_email": {
+      "privileged": true,
+      "controlling_args": ["to"],
+      "content_args": ["subject", "body"],
+      "args": ["to", "subject", "body"]
+    },
+    "delete_email": {
+      "privileged": true,
+      "destructive": true,
+      "controlling_args": ["email_id"],
+      "id_args": { "email_id": { "kind": "email_id", "cue_required": true } },
+      "args": ["email_id"]
+    }
+  }
+}
