@@ -16,6 +16,10 @@ second, independent key: either your own words, or your explicit yes.
 
 Research prototype. MIT licensed. Std-only Rust, no dependencies.
 
+**Already have an agent?** [Python adapters](adapters/python/) put the gate in
+front of existing tools without rewriting them: plain Python functions,
+OpenAI-style function calling, LangChain tools, and an MCP stdio proxy.
+
 ## Why
 
 Agents read untrusted text all day: web pages, inboxes, shared docs, tool
@@ -182,7 +186,8 @@ side channels and white-box adaptive attacks are not addressed.
 
 ## Contributing
 
-Issues and pull requests are welcome, especially: a live-model evaluation,
+Issues and pull requests are welcome, especially: adapters for more agent
+frameworks, a live-model evaluation,
 an adaptive attacker, protected data classes, and a small separate judge for
 the confirm cases. See [WRITEUP.md](WRITEUP.md).
 
