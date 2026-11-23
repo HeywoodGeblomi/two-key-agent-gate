@@ -1,0 +1,25 @@
+[package]
+name = "two-key-agent-gate"
+version = "0.2.0"
+edition = "2021"
+authors = ["Heywood Geblomi"]
+license = "MIT"
+description = "A small, deterministic gate between an AI agent and its tools: privileged calls run only when their targets trace back to what the user actually asked. Std-only, fail-closed, with a user-confirm path and a hash-chained decision log."
+repository = "https://github.com/HeywoodGeblomi/two-key-agent-gate"
+readme = "README.md"
+keywords = ["ai-agents", "prompt-injection", "security", "llm", "tool-use"]
+categories = ["command-line-utilities"]
+publish = false
+
+[lib]
+name = "two_key_gate"
+path = "src/lib.rs"
+
+[[bin]]
+name = "two-key-gate"
+path = "src/main.rs"
+
+[dependencies]
+
+[profile.release]
+debug = false
